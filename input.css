@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Fraunces:wght@600;800&display=swap');
+
+/* ./your-css-folder/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    scroll-behavior: smooth;
+}
+
+.font-principal {
+    font-family: 'Barlow', sans-serif;
+}
+
+.font-titre {
+    font-family: 'Fraunces', serif;
+}
+
+.content-bg-acceuil {
+    background-image: url('./images/fond-1.jpg');
+    background-color: #0006;
+    background-blend-mode: color;
+    animation: anim-bg-acceuil;
+    animation-duration: 12000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.content-text-acceuil h2 {
+    animation: anim-mot-1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1800ms;
+}
+
+.content-text-acceuil {
+    animation: anim-content-acceuil;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    transform: scale(0)
+}
+
+.mot-1-acceuil {
+    animation: anim-mot-1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.mot-1-acceuil-2 {
+    animation-delay: 400ms;
+}
+
+.mot-1-acceuil-3 {
+    animation-delay: 600ms
+}
+
+.mot-1-acceuil-4 {
+    animation-delay: 800ms
+}
+
+.mot-2-acceuil {
+    animation: anim-mot-1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.mot-2-acceuil-1 {
+    animation-delay: 1000ms;
+}
+
+.mot-2-acceuil-2 {
+    animation-delay: 1200ms;
+}
+
+.mot-2-acceuil-3 {
+    animation-delay: 1400ms;
+}
+
+.mot-2-acceuil-4 {
+    animation-delay: 1600ms;
+}
+
+nav ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    border: 1px solid#fffc;
+    opacity: 0;
+    width: 0;
+    transition: 200ms ease-out;
+}
+
+nav ul li a:hover::after {
+    content: "";
+    width: 60%;
+    opacity: 1;
+}
+
+.content-arrow {
+    animation: anim-arrow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 21000ms;
+    animation-timing-function: linear;
+}
+
+.img-carousel {
+    width: 100%;
+    height: 400px;
+}
+
+@keyframes anim-bg-acceuil {
+    0% {
+        background-image: url('images/fond-1.jpg');
+    }
+    33% {
+        background-image: url('images/fond-2.jpg');
+    }
+    66% {
+        background-image: url('images/fond-3.jpg');
+    }
+}
+
+@keyframes anim-mot-1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes anim-content-acceuil {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes anim-arrow {
+    
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        transform: translateY(30px);
+        opacity: 1;
+    }
+
+}
+
+.transition-position {
+    transition: right 0.3s ease-out;
+}
+
+#mission, #objectif, #historique, #dominique {
+    @apply container mx-auto py-8 md:px-8 lg:px-12;
+}
+
+#mission h1, #objectif h1, #historique h1, #dominique h1 {
+    @apply font-titre font-extrabold text-2xl mb-4; 
+}
+
+#mission h2, #objectif h2, #historique h2, #dominique h2 {
+    @apply font-titre font-extrabold text-xl mb-4 text-gray-700; 
+}
+
+
+#mission p, #objectif p, #historique p, #dominique p {
+    @apply font-semibold tracking-wide text-lg leading-8 text-gray-700;
+}
+
+#mission ul, #objectif ul, #historique ul {
+    @apply list-disc;
+}
+
+#mission ol, #objectif ol, #historique ol, #dominique ol {
+    @apply list-decimal;
+}
+
+#mission li, #objectif li, #historique li, #dominique li {
+    @apply font-titre  font-extrabold text-xl text-gray-700 my-2;
+}
